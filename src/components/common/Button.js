@@ -1,4 +1,4 @@
-import { Button as MuiButton } from "@mui/material";
+import { Button as MuiButton, Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 
 const styles = {
@@ -30,7 +30,7 @@ const Button = ({
       color={color}
       {...restProps}
     >
-      {label}
+      <Typography variant="body2">{label}</Typography>
     </MuiButton>
   );
 };

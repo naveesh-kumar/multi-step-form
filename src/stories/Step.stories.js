@@ -2,7 +2,7 @@ import Step from "../components/common/Step";
 
 export default {
   title: "Step",
-  Component: Step,
+  component: Step,
 };
 
 const Template = (args) => <Step {...args} />;

@@ -7,7 +7,7 @@ const styles = {
     width: "100px",
     height: "auto",
     border: `1px solid ${theme.palette.gray.light}`,
-    borderRadius: "4px",
+    borderRadius: "6px",
     padding: "10px",
     gap: "30px",
     display: "flex",

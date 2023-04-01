@@ -46,6 +46,7 @@ const Input = ({
             variant="body2"
             gutterBottom
             fontSize="12px"
+            name={label}
             color={theme.palette.red.strawberry}
             fontWeight="600"
           >

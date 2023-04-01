@@ -36,13 +36,21 @@ const AddOnsCard = ({
 
   return (
     <div className={classes.root} ref={addOnRef}>
-      <Checkbox color="purple" onChange={(e) => handleChange(e)} />
+      <Checkbox
+        color="purple"
+        onChange={(e) => handleChange(e)}
+        disableRipple
+      />
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           width: "100%",
+          wordBreak: "break-word",
+          "& div": {
+            width: "200px",
+          },
         }}
       >
         <div>
@@ -63,7 +71,7 @@ const AddOnsCard = ({
           color={theme.palette.blue.purplish}
           fontWeight={500}
         >
-          +${addOnPrice}/{yearlyBilling ? "yr" : "mo"}
+          ${addOnPrice}/{yearlyBilling ? "yr" : "mo"}
         </Typography>
       </Box>
     </div>

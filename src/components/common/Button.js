@@ -10,6 +10,9 @@ const styles = {
       background: (props) => `${props.hoverBtnColor} !important`,
       boxShadow: "none",
     },
+    "& p": {
+      textDecoration: (props) => (props.underline ? "underline" : ""),
+    },
   },
 };
 
@@ -21,6 +24,7 @@ const Button = ({
   contrastText = "white",
   hoverTextColor,
   hoverBtnColor,
+  underline,
   ...restProps
 }) => {
   return (

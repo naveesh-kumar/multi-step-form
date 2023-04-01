@@ -22,6 +22,7 @@ Secondary.args = {
   variant: "text",
   contrastText: "grey",
   hoverTextColor: theme.palette.blue.marine,
+  hoverBtnColor: "none",
 };
 
 export const Tertiary = Template.bind({});
@@ -31,4 +32,13 @@ Tertiary.args = {
   color: "purple",
   contrastText: "white",
   hoverBtnColor: theme.palette.blue.pastel,
+};
+
+export const Underline = Template.bind({});
+Underline.args = {
+  label: "Change",
+  variant: "text",
+  contrastText: "grey",
+  underline: true,
+  hoverBtnColor: "none",
 };

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
-import Step from "./Step";
-import { theme } from "../../theme";
+import Step from "./common/Step";
+import { theme } from "../theme";
 
 const styles = {
   root: {

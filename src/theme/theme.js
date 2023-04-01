@@ -50,5 +50,22 @@ export const theme = createTheme({
         disableRipple: true,
       },
     },
+    MuiInput: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderRadius: 8,
+          backgroundColor: theme.palette.common.white,
+          fontSize: 14,
+          fontWeight: 600,
+          border: `1px solid ${theme.palette.grey[200]}`,
+          "& .MuiInputBase-input": {
+            padding: "8px 15px",
+          },
+        }),
+      },
+      defaultProps: {
+        disableUnderline: true,
+      },
+    },
   },
 });

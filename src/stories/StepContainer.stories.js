@@ -1,4 +1,4 @@
-import StepContainer from "../components/common/StepContainer";
+import StepContainer from "../components/StepContainer";
 
 export default {
   title: "Step container",

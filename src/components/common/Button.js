@@ -34,7 +34,9 @@ const Button = ({
       color={color}
       {...restProps}
     >
-      <Typography variant="body2">{label}</Typography>
+      <Typography variant="body2" fontSize={12} fontWeight={500}>
+        {label}
+      </Typography>
     </MuiButton>
   );
 };

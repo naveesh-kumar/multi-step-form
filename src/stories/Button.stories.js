@@ -41,4 +41,5 @@ Underline.args = {
   contrastText: "grey",
   underline: true,
   hoverBtnColor: "none",
+  hoverTextColor: theme.palette.blue.purplish,
 };

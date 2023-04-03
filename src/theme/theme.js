@@ -43,7 +43,7 @@ export const theme = createTheme({
         root: {
           textTransform: "none",
           borderRadius: "8px",
-          padding: "6px 20px",
+          padding: "8px 20px",
         },
       },
       defaultProps: {

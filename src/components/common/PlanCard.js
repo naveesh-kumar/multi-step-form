@@ -62,7 +62,8 @@ const PlanCard = ({
           </Typography>
         </Box>
         <Typography variant="caption" color={theme.palette.gray.cool}>
-          ${planPrice}/{yearlyBilling ? "yr" : "mo"}
+          ${planPrice}
+          {yearlyBilling ? "/yr" : "/mo"}
         </Typography>
         {yearlyBilling && (
           <Typography

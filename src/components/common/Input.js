@@ -12,7 +12,9 @@ const styles = {
         !props.error && `1px solid ${theme.palette.blue.purplish}`,
       borderRadius: 8,
     },
-    border: (props) => props.error && "1px solid red",
+    "& input": {
+      border: (props) => props.error && "1px solid red !important",
+    },
   },
 };
 
@@ -23,8 +25,18 @@ const Input = ({
   label,
   errMsg,
   width,
+  name,
+  handleInputChange,
+  handleOnBlur,
   ...restProps
 }) => {
+  const handleChange = (e) => {
+    handleInputChange(e);
+  };
+
+  const handleBlur = (e) => {
+    handleOnBlur(e);
+  };
   return (
     <Box sx={{ width: { width } }}>
       <Box
@@ -59,6 +71,9 @@ const Input = ({
         className={classes.input}
         error={error}
         fullWidth={true}
+        name={name}
+        onChange={(e) => handleChange(e)}
+        onBlur={(e) => handleBlur(e)}
         {...restProps}
       />
     </Box>

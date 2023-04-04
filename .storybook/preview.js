@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../src/theme";
+import { Provider } from "../src/Provider";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -12,5 +13,9 @@ export const parameters = {
 };
 
 export const decorators = [
-  (Story) => <ThemeProvider theme={theme}>{<Story />}</ThemeProvider>,
+  (Story) => (
+    <ThemeProvider theme={theme}>
+      <Provider>{<Story />}</Provider>
+    </ThemeProvider>
+  ),
 ];

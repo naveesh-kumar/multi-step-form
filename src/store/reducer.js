@@ -4,6 +4,8 @@ import {
   SET_ACTIVE_STEP,
   SET_BILLING_PERIOD,
   SET_ACTIVE_PLAN,
+  SET_ADD_ONS,
+  REMOVE_ADD_ONS,
 } from "./actions";
 
 export const initialState = {
@@ -43,6 +45,18 @@ const reducer = (state = initialState, action) => {
     [SET_BILLING_PERIOD]: { ...state, billingPeriod: payload },
     //eg., payload should be [{...}]
     [SET_ACTIVE_PLAN]: { ...state, selectedPlan: payload },
+    //e.g., payload should be {...}
+    [SET_ADD_ONS]: {
+      ...state,
+      selectedAddOns: [...state.selectedAddOns, payload],
+    },
+    //e.g., payload should be 1
+    [REMOVE_ADD_ONS]: {
+      ...state,
+      selectedAddOns: state.selectedAddOns.filter(
+        (addOn) => addOn.id !== payload
+      ),
+    },
   };
 
   return condition[type] ?? state;

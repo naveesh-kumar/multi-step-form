@@ -26,6 +26,7 @@ const Input = ({
   name,
   handleInputChange,
   handleOnBlur,
+  value,
   ...restProps
 }) => {
   return (
@@ -65,6 +66,7 @@ const Input = ({
         error={error}
         fullWidth={true}
         name={name}
+        value={value}
         onChange={(e) => handleInputChange(e)}
         onBlur={(e) => handleOnBlur(e)}
         {...restProps}

@@ -23,14 +23,19 @@ const AddOnsCard = ({
   addOnDesc,
   addOnPrice,
   yearlyBilling,
+  defaultChecked,
+  handleChecked,
+  handleUnchecked,
 }) => {
   const addOnRef = useRef(null);
 
   const handleChange = (e) => {
     if (e.target.checked) {
       addOnRef.current.style.borderColor = theme.palette.blue.purplish;
+      handleChecked();
     } else {
       addOnRef.current.style.borderColor = theme.palette.gray.light;
+      handleUnchecked();
     }
   };
 
@@ -40,6 +45,7 @@ const AddOnsCard = ({
         color="purple"
         onChange={(e) => handleChange(e)}
         disableRipple
+        checked={defaultChecked}
       />
       <Box
         sx={{

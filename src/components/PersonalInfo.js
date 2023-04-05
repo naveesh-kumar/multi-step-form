@@ -20,7 +20,7 @@ const styles = {
 };
 
 const PersonalInfo = ({ classes, width }) => {
-  const { formErrors, dispatch } = useContext(MultiStepFormCtx);
+  const { formValues, formErrors, dispatch } = useContext(MultiStepFormCtx);
 
   const handleOnBlur = (e) => {
     let { name, value } = e.target;
@@ -51,6 +51,7 @@ const PersonalInfo = ({ classes, width }) => {
           handleOnBlur={(e) => handleOnBlur(e)}
           error={!!formErrors.name}
           errMsg={formErrors.name}
+          value={formValues.name}
         />
 
         <Input
@@ -62,6 +63,7 @@ const PersonalInfo = ({ classes, width }) => {
           handleOnBlur={(e) => handleOnBlur(e)}
           error={!!formErrors.email}
           errMsg={formErrors.email}
+          value={formValues.email}
         />
 
         <Input
@@ -73,6 +75,7 @@ const PersonalInfo = ({ classes, width }) => {
           handleOnBlur={(e) => handleOnBlur(e)}
           error={!!formErrors.phone}
           errMsg={formErrors.phone}
+          value={formValues.phone}
         />
       </form>
     </div>

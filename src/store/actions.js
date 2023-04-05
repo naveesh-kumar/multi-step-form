@@ -3,6 +3,8 @@ export const SET_FORM_ERROR = "SET_FORM_ERROR";
 export const SET_ACTIVE_STEP = "SET_ACTIVE_STEP";
 export const SET_BILLING_PERIOD = "SET_BILLING_PERIOD";
 export const SET_ACTIVE_PLAN = "SET_ACTIVE_PLAN";
+export const SET_ADD_ONS = "SET_ADD_ONS";
+export const REMOVE_ADD_ONS = "REMOVE_ADD_ONS";
 
 export const setFormValue = (key, value) => ({
   type: SET_FORM_VALUE,
@@ -27,4 +29,14 @@ export const setBillingPeriod = (payload) => ({
 export const setActivePlan = (plan) => ({
   type: SET_ACTIVE_PLAN,
   payload: [plan],
+});
+
+export const setAddOns = (payload) => ({
+  type: SET_ADD_ONS,
+  payload,
+});
+
+export const removeAddOns = (payload) => ({
+  type: REMOVE_ADD_ONS,
+  payload,
 });

@@ -48,7 +48,7 @@ const SelectYourPlan = ({ classes, width }) => {
               key={item.id}
               imgSrc={item.img}
               planName={item.name}
-              planPrice={item[billingPeriod]}
+              planPrice={item.price[billingPeriod]}
               yearlyBilling={billingPeriod === "yearly"}
               discountMsg={item.yearlyDiscount}
               handleClick={() => dispatch(setActivePlan(item))}

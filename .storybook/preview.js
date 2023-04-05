@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../src/theme";
-import { Provider } from "../src/Provider";
+import { Provider } from "../src/store/Provider";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

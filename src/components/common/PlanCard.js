@@ -4,9 +4,12 @@ import { withStyles } from "@mui/styles";
 
 const styles = {
   root: {
-    width: "100px",
+    width: "90px",
     height: "auto",
-    border: `1px solid ${theme.palette.gray.light}`,
+    border: (props) =>
+      props.highlightBorder
+        ? `1px solid ${theme.palette.blue.purplish}`
+        : `1px solid ${theme.palette.gray.light}`,
     borderRadius: "6px",
     padding: "10px",
     gap: "30px",
@@ -16,9 +19,6 @@ const styles = {
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    "&:focus": {
-      border: `1px solid ${theme.palette.blue.purplish}`,
-    },
     "&:hover": {
       cursor: "pointer",
     },
@@ -39,13 +39,15 @@ const PlanCard = ({
   planPrice,
   yearlyBilling,
   discountMsg,
+  handleClick,
+  highlightBorder,
 }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
   return (
-    <div className={classes.root} tabIndex={1}>
+    <div className={classes.root} tabIndex={1} onClick={handleClick}>
       <img
         src={imgSrc}
-        alt=""
+        alt={planName}
         width={isMobile ? 40 : 30}
         height={isMobile ? 40 : 30}
       />

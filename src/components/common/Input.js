@@ -4,17 +4,15 @@ import { withStyles } from "@mui/styles";
 
 const styles = {
   input: {
-    "& input::placeholder": {
+    "&::placeholder": {
       fontWeight: 400,
     },
-    "& input:focus": {
+    "&:focus": {
       border: (props) =>
         !props.error && `1px solid ${theme.palette.blue.purplish}`,
       borderRadius: 8,
     },
-    "& input": {
-      border: (props) => props.error && "1px solid red !important",
-    },
+    border: (props) => props.error && "1px solid red !important",
   },
 };
 
@@ -30,13 +28,6 @@ const Input = ({
   handleOnBlur,
   ...restProps
 }) => {
-  const handleChange = (e) => {
-    handleInputChange(e);
-  };
-
-  const handleBlur = (e) => {
-    handleOnBlur(e);
-  };
   return (
     <Box sx={{ width: { width } }}>
       <Box
@@ -68,12 +59,14 @@ const Input = ({
       </Box>
       <MuiInput
         placeholder={placeholder}
-        className={classes.input}
+        inputProps={{
+          className: classes.input,
+        }}
         error={error}
         fullWidth={true}
         name={name}
-        onChange={(e) => handleChange(e)}
-        onBlur={(e) => handleBlur(e)}
+        onChange={(e) => handleInputChange(e)}
+        onBlur={(e) => handleOnBlur(e)}
         {...restProps}
       />
     </Box>

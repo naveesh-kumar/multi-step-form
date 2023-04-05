@@ -15,4 +15,5 @@ Primary.args = {
   planPrice: "90",
   yearlyBilling: true,
   discountMsg: "2 months free",
+  highlightBorder: true,
 };

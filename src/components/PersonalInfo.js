@@ -2,8 +2,8 @@ import { withStyles } from "@mui/styles";
 import Header from "./common/Header";
 import Input from "./common/Input";
 import { useContext } from "react";
-import { MultiStepFormCtx } from "../Provider";
-import { setFormError, setFormValue } from "../actions";
+import { MultiStepFormCtx } from "../store/Provider";
+import { setFormError, setFormValue } from "../store/actions";
 
 const styles = {
   root: {
@@ -24,16 +24,13 @@ const PersonalInfo = ({ classes, width }) => {
 
   const handleOnBlur = (e) => {
     let { name, value } = e.target;
-    if (!value) {
-      dispatch(setFormError({ [name]: "This Field is required" }));
-    } else {
-      dispatch(setFormError({ [name]: "" }));
-    }
+    if (!value) return dispatch(setFormError(name, "This Field is required"));
+    return dispatch(setFormError(name, ""));
   };
 
   const handleInputChange = (e) => {
     let { name, value } = e.target;
-    dispatch(setFormValue({ [name]: value }));
+    dispatch(setFormValue(name, value));
   };
 
   return (

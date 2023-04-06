@@ -1,12 +1,23 @@
-import { withStyles } from "@mui/styles";
-import { theme } from "../theme";
-import Header from "./common/Header";
-import { planData } from "../data";
-import PlanCard from "./common/PlanCard";
+/*React hook imports */
 import { useContext } from "react";
+
+/*Material ui imports */
+import { withStyles } from "@mui/styles";
+
+/*Custom theme import */
+import { theme } from "../theme";
+
+/*Components imports */
+import Header from "./common/Header";
+import PlanCard from "./common/PlanCard";
+import Switch from "./common/Switch";
+
+/*Store imports */
 import { MultiStepFormCtx } from "../store/Provider";
 import { setActivePlan, setBillingPeriod } from "../store/actions";
-import Switch from "./common/Switch";
+
+/*Dummy data import */
+import { planData } from "../data";
 
 const styles = {
   root: {
@@ -36,12 +47,14 @@ const SelectYourPlan = ({ classes, width }) => {
 
   return (
     <div className={classes.root}>
+      {/* Header Section */}
       <Header
         width={width}
         mainHeaderTxt="Select you plan"
         subHeaderTxt="You have the option of monthly and yearly billing."
       />
       <div className={classes.planContainer}>
+        {/* List of Plan Cards */}
         {planData &&
           planData?.map((item) => (
             <PlanCard
@@ -57,6 +70,7 @@ const SelectYourPlan = ({ classes, width }) => {
           ))}
       </div>
       <div className={classes.switchContainer}>
+        {/* Switch between monthly or yearly billing */}
         <Switch
           leftText="Monthly"
           rightText="Yearly"

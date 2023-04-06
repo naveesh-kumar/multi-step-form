@@ -1,10 +1,19 @@
-import { withStyles } from "@mui/styles";
-import Header from "./common/Header";
-import { addOnsData } from "../data";
-import AddOnsCard from "./common/AddOnsCard";
+/*React hook imports */
 import { useContext } from "react";
+
+/*Material ui imports */
+import { withStyles } from "@mui/styles";
+
+/*Components imports */
+import Header from "./common/Header";
+import AddOnsCard from "./common/AddOnsCard";
+
+/*Store imports */
 import { MultiStepFormCtx } from "../store/Provider";
 import { removeAddOns, setAddOns } from "../store/actions";
+
+/*Dummy data import */
+import { addOnsData } from "../data";
 
 const styles = {
   root: {
@@ -26,12 +35,14 @@ const PickAddOns = ({ classes, width }) => {
 
   return (
     <div className={classes.root}>
+      {/* Header Section */}
       <Header
         width={width}
         mainHeaderTxt="Pick add-ons"
         subHeaderTxt="Add-ons help enhance your gaming experience."
       />
       <div className={classes.addOnsContainer}>
+        {/* List of add ons */}
         {addOnsData &&
           addOnsData?.map((item) => (
             <AddOnsCard

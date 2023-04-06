@@ -1,5 +1,6 @@
 import Switch from "../components/common/Switch";
 
+//eslint-disable-next-line
 export default {
   title: "Switch",
   component: Switch,

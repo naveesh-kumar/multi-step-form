@@ -1,5 +1,6 @@
 import ButtonContainer from "../components/ButtonContainer";
 
+//eslint-disable-next-line
 export default {
   title: "Button Container",
   component: ButtonContainer,

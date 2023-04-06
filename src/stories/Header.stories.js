@@ -1,5 +1,6 @@
 import Header from "../components/common/Header";
 
+//eslint-disable-next-line
 export default {
   title: "Header",
   component: Header,

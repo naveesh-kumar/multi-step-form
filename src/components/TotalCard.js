@@ -70,6 +70,7 @@ const TotalCard = ({
       {addOns &&
         addOns.map((item) => (
           <TwoCoulmnRow
+            key={item?.id}
             rowKey={item?.name}
             value={item?.price[billingPeriod]}
             yearlyBilling={yearlyBilling}

@@ -1,6 +1,7 @@
 import { theme } from "../theme";
 import Button from "../components/common/Button";
 
+//eslint-disable-next-line
 export default {
   title: "Button",
   component: Button,

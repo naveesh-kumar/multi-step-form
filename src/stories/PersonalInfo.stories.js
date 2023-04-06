@@ -1,5 +1,6 @@
 import PersonalInfo from "../components/PersonalInfo";
 
+//eslint-disable-next-line
 export default {
   title: "Personal Info",
   component: PersonalInfo,

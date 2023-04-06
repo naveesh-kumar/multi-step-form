@@ -1,6 +1,7 @@
 import PlanCard from "../components/common/PlanCard";
 import arcade from "../../public/icons/icon-arcade.svg";
 
+//eslint-disable-next-line
 export default {
   title: "Plan Card",
   component: PlanCard,

@@ -1,5 +1,6 @@
 import AddOnsCard from "../components/common/AddOnsCard";
 
+//eslint-disable-next-line
 export default {
   title: "Add ons Card",
   component: AddOnsCard,

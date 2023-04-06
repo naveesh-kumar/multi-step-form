@@ -1,5 +1,6 @@
 import TotalCard from "../components/TotalCard";
 
+//eslint-disable-next-line
 export default {
   title: "Total Card",
   component: TotalCard,

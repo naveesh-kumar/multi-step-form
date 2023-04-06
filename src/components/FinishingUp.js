@@ -1,5 +1,5 @@
 /*React hook imports */
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 
 /*Material ui imports */
 import { withStyles } from "@mui/styles";
@@ -41,14 +41,17 @@ const FinishingUp = ({ classes, width }) => {
   const planPrice = selectedPlan[0]?.price[billingPeriod];
 
   // total amount of plan selected and associated add ons amount if any selected
-  const total =
-    planPrice +
-    selectedAddOns.reduce((addOnTotal, addOn) => {
-      if (addOn) {
-        addOnTotal = addOnTotal + addOn.price[billingPeriod];
-      }
-      return addOnTotal;
-    }, 0);
+  const total = useMemo(
+    () =>
+      planPrice +
+      selectedAddOns.reduce((addOnTotal, addOn) => {
+        if (addOn) {
+          addOnTotal = addOnTotal + addOn.price[billingPeriod];
+        }
+        return addOnTotal;
+      }, 0),
+    [billingPeriod, selectedAddOns, planPrice]
+  );
 
   return (
     <div className={classes.root}>

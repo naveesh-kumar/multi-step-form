@@ -1,5 +1,6 @@
 import Step from "../components/common/Step";
 
+//eslint-disable-next-line
 export default {
   title: "Step",
   component: Step,

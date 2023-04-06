@@ -1,5 +1,6 @@
 import StepContainer from "../components/StepContainer";
 
+//eslint-disable-next-line
 export default {
   title: "Step container",
   component: StepContainer,

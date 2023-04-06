@@ -1,5 +1,6 @@
 import FinishingUp from "../components/FinishingUp";
 
+//eslint-disable-next-line
 export default {
   title: "Finishing up",
   component: FinishingUp,

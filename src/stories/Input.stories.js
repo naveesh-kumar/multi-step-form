@@ -1,5 +1,6 @@
 import Input from "../components/common/Input";
 
+//eslint-disable-next-line
 export default {
   title: "Input",
   component: Input,

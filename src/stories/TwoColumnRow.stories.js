@@ -1,5 +1,6 @@
 import TwoColumnRow from "../components/common/TwoCoulmnRow";
 
+//eslint-disable-next-line
 export default {
   title: "Two Column Row",
   component: TwoColumnRow,

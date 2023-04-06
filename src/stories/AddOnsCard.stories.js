@@ -14,5 +14,5 @@ Primary.args = {
   addOnName: "Online Service",
   addOnDesc: "Acces to multiplayer games",
   addOnPrice: 1,
-  yearlyBilling: true,
+  adornment: "/yr",
 };

@@ -33,6 +33,12 @@ const PickAddOns = ({ classes, width }) => {
   const { billingPeriod, dispatch, selectedAddOns } =
     useContext(MultiStepFormCtx);
 
+  //adornments for amount field
+  let adornment = {
+    monthly: "/mo",
+    yearly: "/yr",
+  };
+
   return (
     <div className={classes.root}>
       {/* Header Section */}
@@ -51,7 +57,7 @@ const PickAddOns = ({ classes, width }) => {
               addOnName={item.name}
               addOnDesc={item.desc}
               addOnPrice={item.price[billingPeriod]}
-              yearlyBilling={billingPeriod === "yearly"}
+              adornment={adornment[billingPeriod]}
               defaultChecked={
                 !!selectedAddOns?.find((addOns) => item.id === addOns.id)
               }

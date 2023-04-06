@@ -22,7 +22,7 @@ const AddOnsCard = ({
   addOnName,
   addOnDesc,
   addOnPrice,
-  yearlyBilling,
+  adornment,
   defaultChecked,
   handleChecked,
   handleUnchecked,
@@ -77,7 +77,7 @@ const AddOnsCard = ({
           color={theme.palette.blue.purplish}
           fontWeight={500}
         >
-          ${addOnPrice}/{yearlyBilling ? "yr" : "mo"}
+          ${addOnPrice}/{adornment}
         </Typography>
       </Box>
     </div>

@@ -53,6 +53,18 @@ const FinishingUp = ({ classes, width }) => {
     [billingPeriod, selectedAddOns, planPrice]
   );
 
+  //adornments for amount field
+  let adornment = {
+    monthly: "/mo",
+    yearly: "/yr",
+  };
+
+  //interchange billing period
+  const swapBillingPeriod = (period) => {
+    if (period === "yearly") return "monthly";
+    return "yearly";
+  };
+
   return (
     <div className={classes.root}>
       {/* Header section */}
@@ -69,9 +81,7 @@ const FinishingUp = ({ classes, width }) => {
         addOns={selectedAddOns}
         billingPeriod={billingPeriod}
         handleChangeClick={() =>
-          dispatch(
-            setBillingPeriod(billingPeriod === "yearly" ? "monthly" : "yearly")
-          )
+          dispatch(setBillingPeriod(swapBillingPeriod(billingPeriod)))
         }
       />
       {/* Details of total amount */}
@@ -85,7 +95,7 @@ const FinishingUp = ({ classes, width }) => {
           fontWeight={700}
         >
           ${total}
-          {billingPeriod === "yearly" ? "/yr" : "/mo"}
+          {adornment[billingPeriod]}
         </Typography>
       </div>
     </div>

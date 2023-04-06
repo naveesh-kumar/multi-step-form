@@ -66,7 +66,7 @@ const TotalCard = ({
           {yearlyBilling ? "/yr" : "/mo"}
         </Typography>
       </Box>
-      {addOns?.length && <Divider sx={{ margin: "10px 0px" }} />}
+      {!!addOns?.length && <Divider sx={{ margin: "10px 0px" }} />}
       {addOns &&
         addOns.map((item) => (
           <TwoCoulmnRow

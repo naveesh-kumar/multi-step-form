@@ -46,6 +46,7 @@ const PickAddOns = ({ classes, width }) => {
         {addOnsData &&
           addOnsData?.map((item) => (
             <AddOnsCard
+              key={item.id}
               width={width}
               addOnName={item.name}
               addOnDesc={item.desc}

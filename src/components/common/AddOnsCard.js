@@ -77,7 +77,8 @@ const AddOnsCard = ({
           color={theme.palette.blue.purplish}
           fontWeight={500}
         >
-          ${addOnPrice}/{adornment}
+          ${addOnPrice}
+          {adornment}
         </Typography>
       </Box>
     </div>

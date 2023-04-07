@@ -24,7 +24,11 @@ const StepContainer = ({ classes, label, variant, textContent }) => {
     <Box className={classes.root}>
       <Step variant={variant} label={label} />
       <Box className={classes.textContent}>
-        <Typography variant="body2" fontSize="10px">
+        <Typography
+          variant="body2"
+          fontSize="10px"
+          color={theme.palette.gray.light}
+        >
           Step {label}
         </Typography>
         <Typography variant="body2" fontWeight="600" fontSize="12px">

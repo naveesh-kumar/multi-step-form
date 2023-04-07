@@ -1,12 +1,8 @@
-import arcade from "../../public/icons/icon-arcade.svg";
-import advanced from "../../public/icons/icon-advanced.svg";
-import pro from "../../public/icons/icon-pro.svg";
-
 export const planData = [
   {
     id: 1,
     name: "Arcade",
-    img: arcade,
+    img: "/icons/icon-arcade.svg",
     price: {
       monthly: 9,
       yearly: 90,
@@ -16,7 +12,7 @@ export const planData = [
   {
     id: 2,
     name: "Advanced",
-    img: advanced,
+    img: "/icons/icon-advanced.svg",
     price: {
       monthly: 12,
       yearly: 120,
@@ -26,7 +22,7 @@ export const planData = [
   {
     id: 3,
     name: "Pro",
-    img: pro,
+    img: "/icons/icon-pro.svg",
     price: {
       monthly: 15,
       yearly: 150,

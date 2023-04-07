@@ -1,17 +1,20 @@
+import Container from "../components/Container";
 import { theme } from "@/theme";
-import { styled } from "@mui/material";
+import { withStyles } from "@mui/styles";
 import Head from "next/head";
 
-const Overlay = styled("main")({
-  width: "100%",
-  height: "100vh",
-  backgroundColor: theme.palette.blue.light,
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-});
+const styles = {
+  main: {
+    width: "100%",
+    height: "100vh",
+    backgroundColor: theme.palette.blue.light,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+};
 
-const MultiStepForm = () => {
+const MultiStepForm = ({ classes }) => {
   return (
     <>
       <Head>
@@ -20,9 +23,11 @@ const MultiStepForm = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Overlay></Overlay>
+      <main className={classes.main}>
+        <Container />
+      </main>
     </>
   );
 };
 
-export default MultiStepForm;
+export default withStyles(styles)(MultiStepForm);

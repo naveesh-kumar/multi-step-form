@@ -27,7 +27,7 @@ const styles = {
     flexDirection: "column",
   },
   planContainer: {
-    width: (props) => props.width,
+    width: ((props) => props.width) || "100%",
     display: "flex",
     justifyContent: "space-between",
   },

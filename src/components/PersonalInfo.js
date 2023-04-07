@@ -14,7 +14,7 @@ import { setFormError, setFormValue } from "../store/actions";
 
 const styles = {
   root: {
-    padding: "20px 10px",
+    padding: "20px 0px",
     display: "flex",
     gap: "30px",
     flexDirection: "column",
@@ -72,6 +72,7 @@ const PersonalInfo = ({ classes, width }) => {
           width={width}
           name="email"
           required
+          handleInputChange={(e) => handleInputChange(e)}
           handleOnBlur={(e) => handleOnBlur(e)}
           error={!!formErrors.email}
           errMsg={formErrors.email}
@@ -84,6 +85,7 @@ const PersonalInfo = ({ classes, width }) => {
           width={width}
           name="phone"
           required
+          handleInputChange={(e) => handleInputChange(e)}
           handleOnBlur={(e) => handleOnBlur(e)}
           error={!!formErrors.phone}
           errMsg={formErrors.phone}

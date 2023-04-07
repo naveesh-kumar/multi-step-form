@@ -4,7 +4,7 @@ import { withStyles } from "@mui/styles";
 
 const styles = {
   root: {
-    width: (props) => props.width,
+    width: ((props) => props.width) || "100%",
   },
 };
 

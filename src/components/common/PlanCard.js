@@ -4,7 +4,7 @@ import { withStyles } from "@mui/styles";
 
 const styles = {
   root: {
-    width: "90px",
+    width: "100px",
     height: "auto",
     border: (props) =>
       props.highlightBorder

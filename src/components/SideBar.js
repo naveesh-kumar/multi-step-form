@@ -1,5 +1,5 @@
 /*React hook imports */
-import React, { useContext } from "react";
+import React from "react";
 
 /*Material ui imports */
 import { withStyles } from "@mui/styles";
@@ -10,26 +10,24 @@ import StepContainer from "./StepContainer";
 /*Image import */
 import sideBarBg from "../../public/bg-sidebar-desktop.svg";
 
-/*Store imports */
-import { MultiStepFormCtx } from "../store/Provider";
-
 const styles = {
   root: {
-    width: (props) => props.width,
-    height: "450px",
-    background: `url(${sideBarBg})`,
+    width: "100%",
+    height: "100%",
+    //uncomment the folowing for storybook
+    // background: `url(${sideBarBg})`,
+    background: "url(/bg-sidebar-desktop.svg)",
     padding: "30px",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
+    backgroundSize: "cover",
     display: "flex",
     flexDirection: "column",
     gap: "20px",
+    borderRadius: 8,
   },
 };
 
-const SideBar = ({ classes, width }) => {
-  const { activeStep } = useContext(MultiStepFormCtx);
-
+const SideBar = ({ classes, activeStep }) => {
   return (
     <div className={classes.root}>
       {/* List of steps */}

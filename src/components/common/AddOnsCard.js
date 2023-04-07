@@ -5,11 +5,14 @@ import { useRef } from "react";
 
 const styles = {
   root: {
-    width: (props) => props.width,
-    border: `1px solid ${theme.palette.gray.light}`,
+    width: ((props) => props.width) || "100%",
+    border: (props) =>
+      props.defaultChecked
+        ? `1px solid ${theme.palette.blue.purplish}`
+        : `1px solid ${theme.palette.gray.light}`,
     borderRadius: "6px",
     height: "auto",
-    padding: "15px 20px 15px 10px",
+    padding: "10px 20px 10px 10px",
     display: "flex",
     gap: "15px",
     flexDirection: "row",

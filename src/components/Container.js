@@ -24,7 +24,7 @@ import { setActiveStep } from "../store/actions";
 const styles = {
   root: {
     width: "60%",
-    height: "60%",
+    height: "65%",
     borderRadius: 8,
     padding: "10px",
     display: "grid",
@@ -41,6 +41,10 @@ const styles = {
       gridTemplateColumns: "1fr",
       gridTemplateRows: "25% 75%",
       gap: 0,
+    },
+    [theme.breakpoints.up(1100)]: {
+      width: "45%",
+      height: "60%",
     },
   },
   main: {

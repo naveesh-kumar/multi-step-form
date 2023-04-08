@@ -1,6 +1,7 @@
 import { theme } from "../../theme";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { withStyles } from "@mui/styles";
+import Image from "next/image";
 
 const styles = {
   root: {
@@ -45,7 +46,7 @@ const PlanCard = ({
   const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
   return (
     <div className={classes.root} tabIndex={1} onClick={handleClick}>
-      <img
+      <Image
         src={imgSrc}
         alt={planName}
         width={isMobile ? 40 : 30}

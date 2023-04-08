@@ -3,7 +3,7 @@ import { useContext, useMemo, useState } from "react";
 
 /*Material ui imports */
 import { withStyles } from "@mui/styles";
-import { Box, Paper, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/material";
 
 /*Custom theme import */
 import { theme } from "../theme";
@@ -15,6 +15,7 @@ import ButtonContainer from "./ButtonContainer";
 import SelectYourPlan from "./SelectYourPlan";
 import PickAddOns from "./PickAddOns";
 import FinishingUp from "./FinishingUp";
+import ThankYou from "./ThankYou";
 
 /*Store imports */
 import { MultiStepFormCtx } from "../store/Provider";
@@ -60,7 +61,7 @@ const styles = {
       padding: "10px 20px 20px 20px",
       borderRadius: "8px",
       margin: "15px",
-      transform: "translateY(-20%)",
+      transform: "translateY(-95px)",
     },
   },
 };
@@ -70,8 +71,6 @@ const Container = ({ classes }) => {
     useContext(MultiStepFormCtx);
   // local state for tracking when to open thank you page
   const [showThankYou, setShowThankYou] = useState(false);
-  //check if mobile breakpoint
-  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   // logic for back, next or confirm buttons
   let allowClick =
@@ -80,9 +79,9 @@ const Container = ({ classes }) => {
       : activeStep === 2
       ? !!selectedPlan.length
       : true;
-  let showGoBack = activeStep > 1 && activeStep <= 4 && !showThankYou;
+  let showGoBack = activeStep > 1 && activeStep <= 4;
   let showNext = activeStep < 4;
-  let showConfirm = activeStep === 4 && !showThankYou;
+  let showConfirm = activeStep === 4;
 
   //logic for rendering the components depending on the active step
   const componentToRender = useMemo(() => {
@@ -90,7 +89,7 @@ const Container = ({ classes }) => {
       1: <PersonalInfo />,
       2: <SelectYourPlan />,
       3: <PickAddOns />,
-      4: !showThankYou ? <FinishingUp /> : <></>,
+      4: !showThankYou ? <FinishingUp /> : <ThankYou />,
     };
     return component[activeStep] ?? <></>;
   }, [activeStep, showThankYou]);
@@ -103,16 +102,18 @@ const Container = ({ classes }) => {
         {/* respective components for each step */}
         <div className={classes.component}>{componentToRender}</div>
         {/* Button container for each step */}
-        <ButtonContainer
-          showGoBack={showGoBack}
-          showNext={showNext}
-          showConfirm={showConfirm}
-          backClickHandler={() => dispatch(setActiveStep(activeStep - 1))}
-          nextClickHandler={() =>
-            allowClick && dispatch(setActiveStep(activeStep + 1))
-          }
-          confirmClickHandler={() => setShowThankYou(true)}
-        />
+        {!showThankYou && (
+          <ButtonContainer
+            showGoBack={showGoBack}
+            showNext={showNext}
+            showConfirm={showConfirm}
+            backClickHandler={() => dispatch(setActiveStep(activeStep - 1))}
+            nextClickHandler={() =>
+              allowClick && dispatch(setActiveStep(activeStep + 1))
+            }
+            confirmClickHandler={() => setShowThankYou(true)}
+          />
+        )}
       </Box>
     </Box>
   );

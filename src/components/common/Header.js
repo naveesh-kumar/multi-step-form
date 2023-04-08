@@ -1,5 +1,5 @@
 import { theme } from "../../theme";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { withStyles } from "@mui/styles";
 
 const styles = {
@@ -9,6 +9,8 @@ const styles = {
 };
 
 const Header = ({ classes, mainHeaderTxt, subHeaderTxt, width }) => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+
   return (
     <Box className={classes.root}>
       <Typography
@@ -16,10 +18,15 @@ const Header = ({ classes, mainHeaderTxt, subHeaderTxt, width }) => {
         fontWeight={700}
         color={theme.palette.blue.marine}
         letterSpacing={0.2}
+        gutterBottom={isMobile ? true : false}
       >
         {mainHeaderTxt}
       </Typography>
-      <Typography variant="caption" color={theme.palette.gray.cool}>
+      <Typography
+        variant="caption"
+        color={theme.palette.gray.cool}
+        fontSize={isMobile ? 16 : 12}
+      >
         {subHeaderTxt}
       </Typography>
     </Box>

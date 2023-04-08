@@ -17,7 +17,7 @@ import { addOnsData } from "../data";
 
 const styles = {
   root: {
-    padding: "20px 10px",
+    padding: "20px 0px",
     display: "flex",
     gap: "30px",
     flexDirection: "column",

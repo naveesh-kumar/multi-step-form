@@ -18,7 +18,7 @@ import { setBillingPeriod } from "../store/actions";
 
 const styles = {
   root: {
-    padding: "20px 10px",
+    padding: "20px 0px",
     display: "flex",
     gap: "30px",
     flexDirection: "column",
@@ -86,13 +86,18 @@ const FinishingUp = ({ classes, width }) => {
       />
       {/* Details of total amount */}
       <div className={classes.totalContainer}>
-        <Typography variant="caption" color={theme.palette.gray.cool}>
+        <Typography
+          variant="caption"
+          color={theme.palette.gray.cool}
+          fontSize={14}
+        >
           Total (per {billingPeriod === "yearly" ? "year" : "month"})
         </Typography>
         <Typography
           variant="subtitle1"
           color={theme.palette.blue.purplish}
           fontWeight={700}
+          fontSize={14}
         >
           ${total}
           {adornment[billingPeriod]}

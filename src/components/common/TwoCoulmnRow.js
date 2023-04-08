@@ -8,6 +8,11 @@ const styles = {
     justifyContent: "space-between",
     width: "100%",
     margin: "5px 0",
+    "& p": {
+      [theme.breakpoints.down("mobile")]: {
+        fontSize: "14px",
+      },
+    },
   },
 };
 

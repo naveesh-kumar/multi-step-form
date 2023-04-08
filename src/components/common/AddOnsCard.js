@@ -1,5 +1,5 @@
 import { theme } from "../../theme";
-import { Box, Checkbox, Typography } from "@mui/material";
+import { Box, Checkbox, Typography, useMediaQuery } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import { useRef } from "react";
 
@@ -16,6 +16,9 @@ const styles = {
     display: "flex",
     gap: "15px",
     flexDirection: "row",
+    [theme.breakpoints.down("mobile")]: {
+      padding: "10px 10px 10px 0px",
+    },
   },
 };
 
@@ -31,6 +34,7 @@ const AddOnsCard = ({
   handleUnchecked,
 }) => {
   const addOnRef = useRef(null);
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   const handleChange = (e) => {
     if (e.target.checked) {
@@ -59,6 +63,9 @@ const AddOnsCard = ({
           wordBreak: "break-word",
           "& div": {
             width: "200px",
+            [theme.breakpoints.down("mobile")]: {
+              width: "180px",
+            },
           },
         }}
       >
@@ -67,7 +74,7 @@ const AddOnsCard = ({
             variant="subtitle1"
             fontWeight={600}
             color={theme.palette.blue.marine}
-            fontSize={14}
+            fontSize={isMobile ? 16 : 14}
           >
             {addOnName}
           </Typography>

@@ -3,7 +3,10 @@ import { useContext, useMemo, useState } from "react";
 
 /*Material ui imports */
 import { withStyles } from "@mui/styles";
-import { Box, Paper } from "@mui/material";
+import { Box, Paper, useMediaQuery } from "@mui/material";
+
+/*Custom theme import */
+import { theme } from "../theme";
 
 /*Components imports */
 import SideBar from "./SideBar";
@@ -22,11 +25,22 @@ const styles = {
     width: "45%",
     height: "60%",
     borderRadius: 8,
-    padding: "8px",
+    padding: "10px",
     display: "grid",
-    gridTemplateColumns: "35% 55%",
+    gridTemplateColumns: "33% 57%",
     gridTemplateRows: "1fr",
     gap: "10%",
+    background: theme.palette.common.white,
+    [theme.breakpoints.down("mobile")]: {
+      width: "100%",
+      height: "100%",
+      borderRadius: 0,
+      padding: 0,
+      background: "transparent",
+      gridTemplateColumns: "1fr",
+      gridTemplateRows: "25% 75%",
+      gap: 0,
+    },
   },
   main: {
     paddingTop: "2%",
@@ -34,6 +48,20 @@ const styles = {
     gridTemplateColumns: "90%",
     gridTemplateRows: "90% 10%",
     height: "100%",
+    [theme.breakpoints.down("mobile")]: {
+      paddingTop: 0,
+      gridTemplateColumns: "1fr",
+    },
+  },
+  component: {
+    [theme.breakpoints.down("mobile")]: {
+      height: "fit-content",
+      background: theme.palette.common.white,
+      padding: "10px 20px 20px 20px",
+      borderRadius: "8px",
+      margin: "15px",
+      transform: "translateY(-20%)",
+    },
   },
 };
 
@@ -42,6 +70,8 @@ const Container = ({ classes }) => {
     useContext(MultiStepFormCtx);
   // local state for tracking when to open thank you page
   const [showThankYou, setShowThankYou] = useState(false);
+  //check if mobile breakpoint
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   // logic for back, next or confirm buttons
   let allowClick =
@@ -66,12 +96,12 @@ const Container = ({ classes }) => {
   }, [activeStep, showThankYou]);
 
   return (
-    <Paper elevation={1} className={classes.root}>
+    <Box className={classes.root}>
       {/* Side bar section */}
       <SideBar activeStep={activeStep} />
       <Box className={classes.main}>
         {/* respective components for each step */}
-        {componentToRender}
+        <div className={classes.component}>{componentToRender}</div>
         {/* Button container for each step */}
         <ButtonContainer
           showGoBack={showGoBack}
@@ -84,7 +114,7 @@ const Container = ({ classes }) => {
           confirmClickHandler={() => setShowThankYou(true)}
         />
       </Box>
-    </Paper>
+    </Box>
   );
 };
 

@@ -1,5 +1,5 @@
 import { theme } from "../theme";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
 import { withStyles } from "@mui/styles";
 import Button from "./common/Button";
 import TwoCoulmnRow from "./common/TwoCoulmnRow";
@@ -33,6 +33,7 @@ const TotalCard = ({
   handleChangeClick,
 }) => {
   const yearlyBilling = billingPeriod === "yearly";
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
 
   return (
     <Box className={classes.root}>
@@ -41,7 +42,7 @@ const TotalCard = ({
           <Typography
             variant="subtitle1"
             color={theme.palette.blue.marine}
-            fontSize={14}
+            fontSize={isMobile ? 16 : 14}
             fontWeight={600}
           >
             {planName} {yearlyBilling ? "(Yearly)" : "(Monthly)"}
@@ -59,7 +60,7 @@ const TotalCard = ({
         <Typography
           variant="subtitle1"
           color={theme.palette.blue.marine}
-          fontSize={14}
+          fontSize={isMobile ? 16 : 14}
           fontWeight={600}
         >
           ${planPrice}

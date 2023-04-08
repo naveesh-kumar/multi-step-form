@@ -10,6 +10,11 @@ import Button from "./common/Button";
 const styles = {
   root: {
     width: (props) => props.width,
+    alignSelf: "center",
+    [theme.breakpoints.down("mobile")]: {
+      padding: "10px",
+      background: theme.palette.common.white,
+    },
   },
 };
 

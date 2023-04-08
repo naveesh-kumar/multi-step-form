@@ -20,6 +20,10 @@ const styles = {
       props.variant === "noFill"
         ? `1px solid ${theme.palette.common.white}`
         : "",
+    [theme.breakpoints.down("mobile")]: {
+      width: "40px",
+      height: "40px",
+    },
   },
 };
 

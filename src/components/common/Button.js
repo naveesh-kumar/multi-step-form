@@ -1,3 +1,4 @@
+import { theme } from "../../theme";
 import { Button as MuiButton, Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
 
@@ -27,6 +28,8 @@ const Button = ({
   underline,
   ...restProps
 }) => {
+  const isMobile = theme.breakpoints.down("mobile");
+
   return (
     <MuiButton
       className={classes.root}
@@ -34,7 +37,11 @@ const Button = ({
       color={color}
       {...restProps}
     >
-      <Typography variant="body2" fontSize={12} fontWeight={500}>
+      <Typography
+        variant="body2"
+        fontSize={isMobile ? 14 : 12}
+        fontWeight={500}
+      >
         {label}
       </Typography>
     </MuiButton>

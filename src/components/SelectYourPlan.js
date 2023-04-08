@@ -21,7 +21,7 @@ import { planData } from "../data";
 
 const styles = {
   root: {
-    padding: "20px 10px",
+    padding: "20px 0px",
     display: "flex",
     gap: "30px",
     flexDirection: "column",
@@ -30,6 +30,10 @@ const styles = {
     width: ((props) => props.width) || "100%",
     display: "flex",
     justifyContent: "space-between",
+    [theme.breakpoints.down("mobile")]: {
+      flexDirection: "column",
+      gap: "10px",
+    },
   },
   switchContainer: {
     backgroundColor: theme.palette.gray.alabaster,

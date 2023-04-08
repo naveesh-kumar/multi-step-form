@@ -1,5 +1,10 @@
 import { theme } from "../../theme";
-import { Input as MuiInput, Typography, Box } from "@mui/material";
+import {
+  Input as MuiInput,
+  Typography,
+  Box,
+  useMediaQuery,
+} from "@mui/material";
 import { withStyles } from "@mui/styles";
 
 const styles = {
@@ -29,6 +34,8 @@ const Input = ({
   value,
   ...restProps
 }) => {
+  const isMobile = useMediaQuery(theme.breakpoints.down("mobile"));
+
   return (
     <Box sx={{ width: { width } }}>
       <Box
@@ -40,8 +47,9 @@ const Input = ({
         <Typography
           variant="body2"
           gutterBottom
-          fontSize="12px"
+          fontSize={isMobile ? 14 : 12}
           color={theme.palette.blue.marine}
+          fontWeight={500}
         >
           {label}
         </Typography>

@@ -4,6 +4,9 @@ import React from "react";
 /*Material ui imports */
 import { withStyles } from "@mui/styles";
 
+/*Custom theme import */
+import { theme } from "../theme";
+
 /*Components imports */
 import StepContainer from "./StepContainer";
 
@@ -24,6 +27,15 @@ const styles = {
     flexDirection: "column",
     gap: "20px",
     borderRadius: 8,
+    [theme.breakpoints.down("mobile")]: {
+      background: "url(/bg-sidebar-mobile.svg)",
+      borderRadius: 0,
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "start",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    },
   },
 };
 

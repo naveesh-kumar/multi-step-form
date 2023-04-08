@@ -21,7 +21,7 @@ import { planData } from "../data";
 
 const styles = {
   root: {
-    padding: "20px 0px",
+    paddingTop: "20px",
     display: "flex",
     gap: "30px",
     flexDirection: "column",

@@ -12,12 +12,12 @@ const styles = {
         : `1px solid ${theme.palette.gray.light}`,
     borderRadius: "6px",
     height: "auto",
-    padding: "10px 20px 10px 10px",
+    padding: "10px",
     display: "flex",
     gap: "15px",
     flexDirection: "row",
     [theme.breakpoints.down("mobile")]: {
-      padding: "10px 10px 10px 0px",
+      padding: "10px 0px",
     },
   },
 };
@@ -56,16 +56,13 @@ const AddOnsCard = ({
       />
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
+          display: "grid",
           alignItems: "center",
-          width: "100%",
+          gridTemplateColumns: "80% 20%",
           wordBreak: "break-word",
+          width: "100%",
           "& div": {
-            width: "200px",
-            [theme.breakpoints.down("mobile")]: {
-              width: "180px",
-            },
+            width: "100%",
           },
         }}
       >

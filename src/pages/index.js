@@ -2,7 +2,6 @@ import Container from "../components/Container";
 import { theme } from "@/theme";
 import { withStyles } from "@mui/styles";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
 const styles = {
   main: {
@@ -16,10 +15,6 @@ const styles = {
 };
 
 const MultiStepForm = ({ classes }) => {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
   return (
     <>
       <Head>
@@ -28,11 +23,9 @@ const MultiStepForm = ({ classes }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isMounted && (
-        <main className={classes.main}>
-          <Container />
-        </main>
-      )}
+      <main className={classes.main}>
+        <Container />
+      </main>
     </>
   );
 };

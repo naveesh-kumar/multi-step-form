@@ -23,7 +23,7 @@ import { setActiveStep } from "../store/actions";
 
 const styles = {
   root: {
-    width: "45%",
+    width: "60%",
     height: "60%",
     borderRadius: 8,
     padding: "10px",
